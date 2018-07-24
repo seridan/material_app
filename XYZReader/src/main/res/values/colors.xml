@@ -16,10 +16,20 @@
 -->
 
 <resources>
-    <color name="photo_placeholder">#ccc</color>
+    <!-- <color name="photo_placeholder">#ccc</color>
 
     <color name="theme_primary">#04561A</color>
     <color name="theme_primary_dark">#04561A</color>
     <color name="theme_accent">#04561A</color>
     <color name="ltgray">#ffe0e0e0</color>
+-->
+    <color name="dpurple_600">#5e35b1</color>
+    <color name="dpurple_light">#9162e4</color>
+    <color name="dpurple_dark">#280680</color>
+    <color name="pink_a400">#f50057</color>
+
+    <color name="ltgray">#ffe0e0e0</color>
+
+
+    
 </resources>
