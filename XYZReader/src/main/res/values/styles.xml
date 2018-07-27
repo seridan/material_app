@@ -18,8 +18,8 @@
 <resources>
 
     <style name="Theme.Bacon" parent="@style/Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/dpurple_600</item>
-        <item name="colorPrimaryDark">@color/dpurple_light</item>
+        <item name="colorPrimary">@color/cyan_700</item>
+        <item name="colorPrimaryDark">@color/cyan_dark</item>
         <item name="colorAccent">@color/pink_a400</item>
     </style>
 
@@ -35,6 +35,14 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:elevation">@dimen/fab_elevation</item>
         <item name="android:layout_margin">@dimen/fab_margin</item>
+    </style>
+
+    <style name="TextViewTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textColor">@android:color/white</item>re
+
     </style>
 
 

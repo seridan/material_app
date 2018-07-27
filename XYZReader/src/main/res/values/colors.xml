@@ -23,12 +23,16 @@
     <color name="theme_accent">#04561A</color>
     <color name="ltgray">#ffe0e0e0</color>
 -->
-    <color name="dpurple_600">#5e35b1</color>
-    <color name="dpurple_light">#9162e4</color>
-    <color name="dpurple_dark">#280680</color>
+
     <color name="pink_a400">#f50057</color>
+    <color name="cyan_700">#0097a7</color>
+    <color name="cyan_light">#56c8d8</color>
+    <color name="cyan_dark">#006978</color>
+
 
     <color name="ltgray">#ffe0e0e0</color>
+    <color name="black_alpha">#4D000000</color>
+    <color name="grey_700">#616161</color>
 
 
     
