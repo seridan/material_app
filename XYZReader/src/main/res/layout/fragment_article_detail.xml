@@ -65,7 +65,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                app:popupTheme="@style/Theme.Bacon"
+                app:popupTheme="@style/Theme.Bacon.Detail"
                 app:layout_collapseMode="pin"
 
                 >
@@ -99,21 +99,13 @@
     </android.support.v4.widget.NestedScrollView>
 
 
-
-
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/share_fab"
-        android:background="@drawable/add_fab_background"
-        android:layout_gravity="bottom|end"
-        android:layout_marginRight="@dimen/fab_margin"
-        android:layout_marginBottom="@dimen/fab_margin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:src="@drawable/ic_share"
-        android:elevation="@dimen/fab_elevation"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        style="@style/FAB"
+        app:pressedTranslationZ="@dimen/fab_elevation"
         app:layout_anchor="@id/appbar_layout"
         app:layout_anchorGravity="bottom|end"
-        app:fabSize="normal"/>
+        app:fabSize="normal" />
 
 </android.support.design.widget.CoordinatorLayout>
