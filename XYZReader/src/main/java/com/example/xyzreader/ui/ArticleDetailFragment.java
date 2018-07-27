@@ -183,6 +183,12 @@ public class ArticleDetailFragment extends Fragment implements
             ((AppCompatActivity) getActivity()).getSupportActionBar().setHomeButtonEnabled(true);
             ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
+            mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    getActivity().onBackPressed();
+                }
+            });
         }
 
         setChangedListener();
@@ -193,6 +199,10 @@ public class ArticleDetailFragment extends Fragment implements
         return mRootView;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
 
     private void setChangedListener() {
         //https://stackoverflow.com/questions/31682310/android-collapsingtoolbarlayout-collapse-listener
