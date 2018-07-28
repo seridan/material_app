@@ -53,27 +53,22 @@ public class ArticleDetailFragment extends Fragment implements
     private Cursor mCursor;
     private long mItemId;
     private View mRootView;
-    private int mMutedColor = 0xFF333333;
-    private ObservableScrollView mScrollView;
-    private DrawInsetsFrameLayout mDrawInsetsFrameLayout;
-    private ColorDrawable mStatusBarColorDrawable;
-
-    private int mTopInset;
-    private View mPhotoContainerView;
     private ImageView mPhotoView;
-    private int mScrollY;
     private boolean mIsCard = false;
     private int mStatusBarFullOpacityBottom;
-
     private String title;
-
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss");
     // Use default locale format
     private SimpleDateFormat outputFormat = new SimpleDateFormat();
     // Most time functions can only handle 1902 - 2037
     private GregorianCalendar START_OF_EPOCH = new GregorianCalendar(2,1,1);
 
-    private Unbinder mUnbinder;
+    @BindView(R.id.article_title)
+    TextView titleView;
+    @BindView(R.id.article_byline)
+    TextView bylineView;
+    @BindView(R.id.article_body)
+    TextView bodyView;
 
     @BindView(R.id.appbar_layout)
     AppBarLayout mAppbar;
@@ -81,7 +76,6 @@ public class ArticleDetailFragment extends Fragment implements
     Toolbar mToolbar;
     @BindView(R.id.collapsingToolbar_layout)
     CollapsingToolbarLayout mCollapsingToolbar;
-
 
 
     /**
@@ -138,32 +132,8 @@ public class ArticleDetailFragment extends Fragment implements
 
         ButterKnife.bind(this, mRootView);
 
+        mPhotoView = mRootView.findViewById(R.id.photo);
 
-       /*//This code block is to set the up button movement
-        mDrawInsetsFrameLayout = (DrawInsetsFrameLayout)
-                mRootView.findViewById(R.id.draw_insets_frame_layout);
-        mDrawInsetsFrameLayout.setOnInsetsCallback(new DrawInsetsFrameLayout.OnInsetsCallback() {
-            @Override
-            public void onInsetsChanged(Rect insets) {
-                mTopInset = insets.top;
-            }
-        });
-
-        mScrollView = (ObservableScrollView) mRootView.findViewById(R.id.scrollview);
-        mScrollView.setCallbacks(new ObservableScrollView.Callbacks() {
-            @Override
-            public void onScrollChanged() {
-                mScrollY = mScrollView.getScrollY();
-                getActivityCast().onUpButtonFloorChanged(mItemId, ArticleDetailFragment.this);
-                mPhotoContainerView.setTranslationY((int) (mScrollY - mScrollY / PARALLAX_FACTOR));
-                updateStatusBar();
-            }
-        });*/
-
-        mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
-        //mPhotoContainerView = mRootView.findViewById(R.id.photo_container);
-
-        //mStatusBarColorDrawable = new ColorDrawable(0);
 
         //On click fab button method to launch an action share intent from ArticleDetailActivity class
         mRootView.findViewById(R.id.share_fab).setOnClickListener(new View.OnClickListener() {
@@ -190,11 +160,7 @@ public class ArticleDetailFragment extends Fragment implements
                 }
             });
         }
-
         setChangedListener();
-
-
-        //updateStatusBar();
 
         return mRootView;
     }
@@ -216,40 +182,11 @@ public class ArticleDetailFragment extends Fragment implements
                     //Expanded toolbar
                     mCollapsingToolbar.setTitle(null);
                 }
-
             }
         });
-
     }
 
-    /*private void updateStatusBar() {
-        int color = 0;
-        if (mPhotoView != null && mTopInset != 0 && mScrollY > 0) {
-            float f = progress(mScrollY,
-                    mStatusBarFullOpacityBottom - mTopInset * 3,
-                    mStatusBarFullOpacityBottom - mTopInset);
-            color = Color.argb((int) (255 * f),
-                    (int) (Color.red(mMutedColor) * 0.9),
-                    (int) (Color.green(mMutedColor) * 0.9),
-                    (int) (Color.blue(mMutedColor) * 0.9));
-        }
-        //mStatusBarColorDrawable.setColor(color);
-       // mDrawInsetsFrameLayout.setInsetBackground(mStatusBarColorDrawable);
-    }
 
-    static float progress(float v, float min, float max) {
-        return constrain((v - min) / (max - min), 0, 1);
-    }
-
-    static float constrain(float val, float min, float max) {
-        if (val < min) {
-            return min;
-        } else if (val > max) {
-            return max;
-        } else {
-            return val;
-        }
-    }*/
 
     private Date parsePublishedDate() {
         try {
@@ -267,12 +204,8 @@ public class ArticleDetailFragment extends Fragment implements
             return;
         }
 
-        TextView titleView = (TextView) mRootView.findViewById(R.id.article_title);
-        TextView bylineView = (TextView) mRootView.findViewById(R.id.article_byline);
+
         bylineView.setMovementMethod(new LinkMovementMethod());
-        TextView bodyView = (TextView) mRootView.findViewById(R.id.article_body);
-
-
         bodyView.setTypeface(Typeface.createFromAsset(getResources().getAssets(), "Rosario-Regular.ttf"));
 
         if (mCursor != null) {

@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/app_bar_height" >
 
-
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsingToolbar_layout"
             android:layout_width="match_parent"
@@ -30,7 +29,6 @@
                 android:scaleType="centerCrop"
                 android:contentDescription="@string/app_name" />
 
-
             <LinearLayout
                 android:id="@+id/titles_container"
                 android:layout_width="match_parent"
@@ -44,31 +42,27 @@
                 <TextView
                     android:id="@+id/article_title"
                     style="@style/TextViewTitle"
-                    android:layout_marginBottom="2dp"
+                    android:layout_marginBottom="@dimen/dimens_2dp"
                     android:gravity="bottom"
-                    android:textSize="@dimen/large"
+                    android:textSize="@dimen/large_text"
                     android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/article_byline"
                     style="@style/TextViewTitle"
-                    android:textSize="@dimen/medium"/>
+                    android:textSize="@dimen/regular_tex"/>
 
             </LinearLayout>
-
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/toolbar_height"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                app:layout_collapseMode="pin"
-
-                >
+                app:layout_collapseMode="pin" >
 
             </android.support.v7.widget.Toolbar>
         </android.support.design.widget.CollapsingToolbarLayout>
-
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
@@ -83,18 +77,15 @@
         <TextView
             android:id="@+id/article_body"
             android:fontFamily="serif"
-            android:textSize="18sp"
+            android:textSize="@dimen/medium_text"
             android:textColor="@color/grey_700"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
             android:padding="@dimen/dimens_16dp"
-
-            android:textColorLink="?colorAccent"
-             />
+            android:textColorLink="?colorAccent" />
 
     </android.support.v4.widget.NestedScrollView>
-
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/share_fab"
