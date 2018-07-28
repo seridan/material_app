@@ -105,8 +105,6 @@ public class ArticleDetailFragment extends Fragment implements
         mStatusBarFullOpacityBottom = getResources().getDimensionPixelSize(
                 R.dimen.detail_card_top_margin);
         setHasOptionsMenu(true);
-
-
     }
 
     public ArticleDetailActivity getActivityCast() {
@@ -116,8 +114,6 @@ public class ArticleDetailFragment extends Fragment implements
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
-
         // In support library r8, calling initLoader for a fragment in a FragmentPagerAdapter in
         // the fragment's onCreate may cause the same LoaderManager to be dealt to multiple
         // fragments because their mIndex is -1 (haven't been added to the activity yet). Thus,
@@ -133,8 +129,6 @@ public class ArticleDetailFragment extends Fragment implements
         ButterKnife.bind(this, mRootView);
 
         mPhotoView = mRootView.findViewById(R.id.photo);
-
-
         //On click fab button method to launch an action share intent from ArticleDetailActivity class
         mRootView.findViewById(R.id.share_fab).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -186,8 +180,6 @@ public class ArticleDetailFragment extends Fragment implements
         });
     }
 
-
-
     private Date parsePublishedDate() {
         try {
             String date = mCursor.getString(ArticleLoader.Query.PUBLISHED_DATE);
@@ -203,7 +195,6 @@ public class ArticleDetailFragment extends Fragment implements
         if (mRootView == null) {
             return;
         }
-
 
         bylineView.setMovementMethod(new LinkMovementMethod());
         bodyView.setTypeface(Typeface.createFromAsset(getResources().getAssets(), "Rosario-Regular.ttf"));
@@ -292,14 +283,4 @@ public class ArticleDetailFragment extends Fragment implements
         bindViews();
     }
 
-  /*  public int getUpButtonFloor() {
-        if (mPhotoContainerView == null || mPhotoView.getHeight() == 0) {
-            return Integer.MAX_VALUE;
-        }
-
-        // account for parallax
-        return mIsCard
-                ? (int) mPhotoContainerView.getTranslationY() + mPhotoView.getHeight() - mScrollY
-                : mPhotoView.getHeight() - mScrollY;
-    }*/
 }
