@@ -27,13 +27,15 @@
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
       </style>
-
-
+    
+    <style name="HeadLineText" >
+        <item name="android:textColor">#ff7043</item>
+        <item name="android:textSize">@dimen/large</item>
+    </style>
 
     <style name="FAB">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:elevation">@dimen/fab_elevation</item>
         <item name="android:layout_margin">@dimen/fab_margin</item>
     </style>
 
@@ -41,10 +43,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:fontFamily">sans-serif-condensed</item>
-        <item name="android:textColor">@android:color/white</item>re
-
+        <item name="android:textColor">@android:color/white</item>
     </style>
-
-
 
   </resources>

@@ -29,6 +29,12 @@
     <color name="cyan_light">#56c8d8</color>
     <color name="cyan_dark">#006978</color>
 
+    <color name="background_article_list">#fbe9e7</color>
+    <color name="headline_text_color">#ff7043</color>
+    <color name="subtitle_article_list_text_color">#6000</color>
+    <color name="item_list_article_background_color">#616161</color>
+
+
 
     <color name="ltgray">#ffe0e0e0</color>
     <color name="black_alpha">#4D000000</color>
