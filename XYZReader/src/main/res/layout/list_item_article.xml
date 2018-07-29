@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/dimens_4dp"
-    app:cardElevation="@dimen/dimens_4dp"
+    app:cardElevation="@dimen/default_cardview_elevation"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?selectableItemBackground">

@@ -19,6 +19,9 @@
     <dimen name="app_bar_height">280dp</dimen>
     <dimen name="toolbar_height">56dp</dimen>
 
+    <!-- CardView dimen -->
+    <dimen name="default_cardview_elevation">1dp</dimen>
+
     <!-- Common used dimens -->
     <dimen name="dimens_2dp">2dp</dimen>
     <dimen name="dimens_4dp">4dp</dimen>
